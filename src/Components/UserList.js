@@ -3,7 +3,7 @@ import User from './User'
 import '../User.css'
 import ComposableUser from './ComposableUser'
 import '../UserList.css'
-import UseHook from './useHook'
+
 
 
 
@@ -59,7 +59,7 @@ function UserList() {
                </div>
             </ComposableUser>
 
-            <UseHook></UseHook>
+            
             
         </div>
     )
