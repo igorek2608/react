@@ -17,18 +17,19 @@ function ComposableUser() {
     
     const names= arr.map(obj=>obj.name)
     console.log(names)
+   
     
+
+
     return (    
         
-        <div>
-        <Item>
-            <div>
-                {names}
-            </div>
+        
+        <Item   >
+         <p>Victor</p>
             
         </Item>
         
-        </div>
+        
                 
           
         

@@ -4,13 +4,13 @@ import '../User.css';
 
 
 function User({name, className}) {
-    console.log((name))
+    
     const eNames=name.split('').includes('e');
     const arr=name.split('');
-    console.log(arr)
+   
     const changeNames=arr.splice(5,10,"...");
     const newNames= arr.join('')
-    console.log(newNames)
+   
     const lowerCaseName=name.toLowerCase();
     const palidromName=name.toLowerCase().split('').reverse().join('');
     

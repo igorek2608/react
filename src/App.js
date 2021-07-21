@@ -1,7 +1,7 @@
-import logo from './logo.svg';
+
 import './App.css';
 import UserList from './Components/UserList';
-import ComposableUser from './Components/ComposableUser';
+import List from './Components/List';
 
 
 function App() {

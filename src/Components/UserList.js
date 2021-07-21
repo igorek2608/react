@@ -4,8 +4,8 @@ import '../User.css'
 import ComposableUser from './ComposableUser'
 import '../UserList.css'
 import Item from './Item'
-
-
+import FilterList from './FilterList'
+import List from './List'
 
 
 
@@ -31,7 +31,8 @@ function UserList() {
             </User>))}
 
             <ComposableUser></ComposableUser>
-
+            <List></List>
+            <FilterList></FilterList>
             
             
         </div>
