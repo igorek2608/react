@@ -14,48 +14,56 @@ function List() {
 
     const[list,setList]=useState(array)
 
-    function removeItem(index){
-        console.log(index)
-        setList([...list.slice(0, index), ...list.slice(index + 1)]);
-    }
+    // function removeItem(index){
+    //     console.log(index)
+    //     setList([...list.slice(0, index), ...list.slice(index + 1)]);
+    // }
 
 
 
 
 
-    const result=list.map((item,index)=>{
-        return (
-            <ListItem  title={item.title} key={index} id={item.id} onClick={()=>removeItem(index)}  >
-
-            </ListItem>
-        )
-    })
+    // const result=list.map((item,index)=>{
+    //     return (
+            
+    //         <ListItem  title={item.title} key={index} id={item.id} onClick={()=>removeItem(index)}  >
+                
+    //         </ListItem>
+            
+    //     )
+    // })
 
     
 
-    return(
+    // return(
         
-       <div>
-           {result}
-       </div>
-    )
+    //    <div>
+            
+    //        {result}
+    //    </div>
+    // )
 
-   // const handleRemoveItem = (e) => {
-    //     const title = e.currentTarget.getAttribute("title")
-    //      setList(list.filter(item => item.title !== title));
-    // };
+   const handleRemoveItem = (e) => {
+        const title = e.currentTarget.getAttribute("title")
+         setList(list.filter(item => item.title !== title));
+    };
            
-    // return (
-    //     <div>
-    //       {list.map(item => {
-    //         return (<ListItem  onClick={handleRemoveItem} title={item.title} key={item.id} id={item.id}>
+    return (
+        <div>
+          {list.map(item => {
+            return (
+                <>
+                <ListItem  onClick={handleRemoveItem} title={item.title} key={item.id} id={item.id}>
                   
-    //       </ListItem>
-                              
-    //         );
-    //       })}
-    //     </div>
-    //   );
+                 </ListItem>
+                
+                </>
+
+            );
+          })}
+          
+        </div>
+      );
 };
 
 

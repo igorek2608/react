@@ -31,13 +31,13 @@ function FilterList() {
     return (
         <div style={{marginTop:'20px'}}>
             <input type="name"
-             onChange={(e)=>SetFilter(e.target.value)} 
-             placeholder="filter" 
-             className="input" 
-             style={{margin:'0',
-            borderRadius:'5px',
-            height:'30px',
-            width:'200px'
+                onChange={(e)=>SetFilter(e.target.value)} 
+                placeholder="filter" 
+                className="input" 
+                style={{margin:'0',
+                borderRadius:'5px',
+                height:'30px',
+                width:'200px'
 
         }}/>
             <div className="content">

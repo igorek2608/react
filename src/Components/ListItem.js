@@ -10,7 +10,8 @@ function ListItem({title, id}) {
 
     return (
         <div>
-            {`${title} ${id} `} 
+            {`${title} ${id}  `} 
+            
             
         </div>
     )
