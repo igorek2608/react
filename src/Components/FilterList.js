@@ -32,15 +32,14 @@ function FilterList() {
         <div style={{marginTop:'20px'}}>
             <input type="name"
                 onChange={(e)=>SetFilter(e.target.value)} 
-                placeholder="filter" 
-                className="input" 
+                placeholder="filter"            
                 style={{margin:'0',
                 borderRadius:'5px',
                 height:'30px',
                 width:'200px'
 
         }}/>
-            <div className="content">
+            <div>
                 <ul>
                     {filteredNames.map((item,idx)=>(<li key={idx} style={{listStyle:'none', fontSize:'18px'}}>{item}</li>))}
                 </ul>
