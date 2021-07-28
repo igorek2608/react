@@ -4,6 +4,7 @@
     font-size: 18px;
     color:darkred;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .nav-link:hover{

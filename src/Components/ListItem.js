@@ -1,15 +1,15 @@
 import React,{useState} from 'react'
 
-function ListItem({title, id}) {
+function ListItem({title, id, onClick}) {
     
-   
+   console.log(onClick)
  
 
 
 
 
     return (
-        <div>
+        <div onClick={onClick}>
             {`${title} ${id}  `} 
             
             

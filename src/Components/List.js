@@ -43,17 +43,20 @@ function List() {
     //    </div>
     // )
 
-   const handleRemoveItem = (e) => {
-        const title = e.currentTarget.getAttribute("title")
-         setList(list.filter(item => item.title !== title));
+   const handleRemoveItem = (id) =>(e)=> {
+        console.log(id, e)
+        //  setList(list.filter(item => item.id !== id));
     };
            
+
+    handleRemoveItem()
+
     return (
         <div>
           {list.map(item => {
             return (
                 <>
-                <ListItem  onClick={handleRemoveItem} title={item.title} key={item.id} id={item.id}>
+                <ListItem  onClick={()=>handleRemoveItem} title={item.title} key={item.id} id={item.id}>
                   
                  </ListItem>
                 

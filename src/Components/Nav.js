@@ -1,23 +1,21 @@
 import React from 'react'
 import NavLink from './NavLink'
 import '../CSS/Nav.css'
+import {Link} from 'react-router-dom'
+
 
 function Nav() {
 
-    const arr=[
-        {id: "uniq1", name:"Main"}, 
-        {id: "uniq2", name:"About us"}, 
-        {id: "uniq3", name:"Projects"}, 
-        {id: "uniq4", name:"Contacts"}, 
-        
-    ]
+    
 
 
     return (
-        <div className='nav'>
-             {arr.map((el)=>(<NavLink name={el.name} key={el.id} className="nav-link">
-
-             </NavLink>))}
+        <div >
+             <ul className='nav'>
+                 <li style={{listStyle:'none'}}><Link className='nav-link' to='/'>Home</Link></li>
+                 <li style={{listStyle:'none'}}><Link className='nav-link' to='/Contacts'>Contacts</Link></li>
+                 <li style={{listStyle:'none'}}><Link className='nav-link' to='/Projects'>Projects</Link></li>
+             </ul>
         </div>
     )
 }

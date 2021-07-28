@@ -1,5 +1,7 @@
 import React,{useState, useEffect} from 'react'
 import '../CSS/Timer.css'
+
+
 function Timer() {
     const[second, setSecond]=useState('00');
     const[minute, setMinute]=useState('00');
