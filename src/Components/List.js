@@ -4,13 +4,17 @@ import ReactDOM from "react-dom"
 
 
 
+
+const array=[
+  {id: "uniq1", title:"red"}, 
+  {id: "uniq2", title:"black"}, 
+  {id: "uniq3", title:"green"}, 
+  
+]
+
+
 function List() {
-    const array=[
-        {id: "uniq1", title:"red"}, 
-        {id: "uniq2", title:"black"}, 
-        {id: "uniq3", title:"green"}, 
-        
-    ]
+   
 
     const[list,setList]=useState(array)
 
@@ -43,20 +47,20 @@ function List() {
     //    </div>
     // )
 
-   const handleRemoveItem = (id) =>(e)=> {
-        console.log(id, e)
-        //  setList(list.filter(item => item.id !== id));
+   const handleRemoveItem = (id) =>{
+        
+        setList(list.filter(item => item.id !== id));
+        
     };
            
 
-    handleRemoveItem()
-
+    
     return (
         <div>
           {list.map(item => {
             return (
                 <>
-                <ListItem  onClick={()=>handleRemoveItem} title={item.title} key={item.id} id={item.id}>
+                <ListItem  onClick={()=>handleRemoveItem(item.id)} title={item.title} key={item.id} id={item.id}>
                   
                  </ListItem>
                 

@@ -1,8 +1,8 @@
-import React,{useState} from 'react'
+import React from 'react'
 
 function ListItem({title, id, onClick}) {
     
-   console.log(onClick)
+   
  
 
 
