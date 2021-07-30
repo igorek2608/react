@@ -85,17 +85,6 @@ console.log(store.getState())
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 function App() {
   return (
     <BrowserRouter>
