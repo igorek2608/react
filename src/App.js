@@ -1,15 +1,14 @@
+import "./App.css";
+import UserList from "./Components/UserList";
+import List from "./Components/List";
+import Page from "./Components/Page";
+import Timer from "./Components/Timer";
+import { BrowserRouter, Route, Switch, NavLink } from "react-router-dom";
+import Users from "./pages/Users";
+import Home from "./pages/Home";
 
-import './App.css';
-import UserList from './Components/UserList';
-import List from './Components/List';
-import Page from './Components/Page';
-import Timer from './Components/Timer';
-import {BrowserRouter} from 'react-router-dom';
-import {createStore, combineReducers} from 'redux'
 
-
-
-const userReducer=(state=[], action)=>{
+/* const userReducer=(state=[], action)=>{
     switch(action.type){
       case "SET_NAME":{
         const name=action.payload.name;
@@ -55,7 +54,7 @@ const cartReducer=(state=[], action)=>{
 const rootReducer= combineReducers({
   user:userReducer,
   cart:cartReducer
-})
+},window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 
 
 const store=createStore(rootReducer);
@@ -82,18 +81,24 @@ store.dispatch(removeProducts(box.id))
 store.dispatch(removeProducts(card.id))
 store.dispatch(setInfo(userInfo))
 console.log(store.getState())
-
-
+ */
 
 function App() {
   return (
     <BrowserRouter>
-    <div className="App">
-      <UserList></UserList>
-      {/* <Page></Page> */}
-      {/* <Timer></Timer> */}
+      <div className="App">
+        
+        {/* <UserList></UserList> */}
+        {/* <Page></Page> */}
+        {/* <Timer></Timer> */}
+        <NavLink activeStyle={{margin:'5px', color:'tomato', textDecoration:'none'}} to='/Home'>Home</NavLink>
+        <NavLink activeStyle={{margin:'5px', color:'tomato',textDecoration:'none'}} to='/Users'>Users</NavLink>
+        <Switch>
+        <Route path ='/Home' component={Home}></Route>  
+        <Route path="/Users" component={Users}></Route>
+      </Switch>
+      </div>
       
-    </div>
     </BrowserRouter>
   );
 }
