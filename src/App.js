@@ -6,7 +6,7 @@ import Timer from "./Components/Timer";
 import { BrowserRouter, Route, Switch, NavLink } from "react-router-dom";
 import Users from "./pages/Users";
 import Home from "./pages/Home";
-
+import User from "./pages/User";
 
 /* const userReducer=(state=[], action)=>{
     switch(action.type){
@@ -94,8 +94,10 @@ function App() {
         <NavLink activeStyle={{margin:'5px', color:'tomato', textDecoration:'none'}} to='/Home'>Home</NavLink>
         <NavLink activeStyle={{margin:'5px', color:'tomato',textDecoration:'none'}} to='/Users'>Users</NavLink>
         <Switch>
-        <Route path ='/Home' component={Home}></Route>  
+        
+        <Route path ='/Home'component={Home}></Route>  
         <Route path="/Users" component={Users}></Route>
+        
       </Switch>
       </div>
       

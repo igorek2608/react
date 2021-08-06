@@ -26,3 +26,19 @@
     border-radius: 50%;
     width: 50px;
 }
+.wrapper-btn{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.primary-btn{
+    padding: 4px 10px;
+    border: none;
+    border-radius: 5px;
+    color:rebeccapurple;
+    cursor: pointer;
+    background-color: sandybrown;
+    text-decoration: none;
+}
+.primary-btn:hover{
+    color:white;
+}

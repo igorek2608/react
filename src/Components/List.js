@@ -49,7 +49,7 @@ function List() {
 
    const handleRemoveItem = (id) =>{
         
-        setList(list.filter(item => item.id !== id));
+        setList(list.filter(item => item.id!== id));
         
     };
            
