@@ -1,0 +1,13 @@
+.nav-link{
+    list-style: none;
+    margin-left: 20px;
+    font-size: 18px;
+    color:darkred;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.nav-link:hover{
+    color:wheat;
+    transition: 200ms all;
+}
