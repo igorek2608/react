@@ -15,7 +15,7 @@ function App() {
         </NavLink>
       <Switch>
         
-        <Route path="/repos" component={Repos}></Route>
+        <Route path="/" component={Repos}></Route>
         {/* <Route path="/users" component={Users}></Route> */}
         {/* <Route>no match</Route> */}
       </Switch>

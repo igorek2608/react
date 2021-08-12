@@ -8,9 +8,10 @@ import {
   selectReposLoading,
 } from "../store/repos/selectors";
 import "./Repos.scss";
+import Card from "./Card";
 
 function Repos() {
-  const [value,setValue]=useState('')
+  const [value, setValue] = useState("");
   const items = useSelector(selectReposItems);
   const loading = useSelector(selectReposLoading);
   const error = useSelector(selectReposError);
@@ -20,19 +21,22 @@ function Repos() {
     dispatch(fetchRepos());
   }, []);
 
-  const filteredRepos=items.filter((item)=>{
-    return item.name.toLowerCase().includes(value.toLocaleLowerCase())
-  })
-
-
-
-
+  const filteredRepos = items.filter((item) => {
+    return item.name.toLowerCase().includes(value.toLocaleLowerCase());
+  });
 
   return (
     <div className="repos">
       <h1>Список репозиториев</h1>
+      {loading && <div>Loading...</div>}
+      {error && <div>Error^(</div>}
       <div className="search-wrapper">
-        <input className="search" type="name" placeholder="search" onChange={(event=>setValue(event.target.value))}></input>
+        <input
+          className="search"
+          type="name"
+          placeholder="search"
+          onChange={(event) => setValue(event.target.value)}
+        ></input>
       </div>
       {filteredRepos
         .sort((a, b) => {
@@ -41,14 +45,13 @@ function Repos() {
           return 0;
         })
         .map((item) => (
-          <div className="repos-item">
-            <h3 className="repos-title">Name:{item.name}</h3>
-            <ul className="repos-description">
-              <li key={item.id}>Nmber of stars:{item.stargazers_count}</li>
-              <li>Date of last commits:{item.pushed_at}</li>
-              <li>Link to GitHub:{item.git_url}</li>
-            </ul>
-          </div>
+          <Card
+            name={item.name}
+            key={item.id}
+            stars={item.stargazers_count}
+            commit={item.pushed_at}
+            link={item.git_url}
+          ></Card>
         ))}
     </div>
   );
