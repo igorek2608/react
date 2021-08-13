@@ -1,11 +1,14 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchRepos } from "../store/repos/actions";
+import { fetchRepos, fetchReposPage } from "../store/repos/actions";
 import {
   selectReposItems,
   selectReposError,
   selectReposLoading,
+  selectCurrentPage,
+  selectperPage,
+  selectTotalCount,
 } from "../store/repos/selectors";
 import "./Repos.scss";
 import Card from "./Card";
@@ -15,13 +18,18 @@ function Repos() {
   const items = useSelector(selectReposItems);
   const loading = useSelector(selectReposLoading);
   const error = useSelector(selectReposError);
+  const currentPage = useSelector(selectCurrentPage);
+  const totalCount = useSelector(selectTotalCount);
+  const perPage = useSelector(selectperPage);
+  const pages = [1, 2, 3, 4];
   const dispatch = useDispatch();
   console.log(items);
-  useEffect(() => {
-    dispatch(fetchRepos());
-  }, []);
 
-  const filteredRepos = items.filter((item) => {
+  useEffect(() => {
+    dispatch(fetchRepos(currentPage, perPage));
+  }, [currentPage]);
+
+  let filteredRepos = items.filter((item) => {
     return item.name.toLowerCase().includes(value.toLocaleLowerCase());
   });
 
@@ -29,7 +37,7 @@ function Repos() {
     <div className="repos">
       <h1>Список репозиториев</h1>
       {loading && <div>Loading...</div>}
-      {error && <div>Error^(</div>}
+      {error && <div>Error^</div>}
       <div className="search-wrapper">
         <input
           className="search"
@@ -53,6 +61,16 @@ function Repos() {
             link={item.git_url}
           ></Card>
         ))}
+
+      <div className="pages">
+        {pages.map((page, index) => (
+          <span className="page" 
+          key={index}
+          onClick={()=>dispatch(currentPage(page))}
+            >{page}
+          </span>
+        ))}
+      </div>
     </div>
   );
 }

@@ -12,4 +12,13 @@
 .repos-description li{
     list-style: none;
 }
-
+.pages{
+    margin: 20px 0;
+    .page{
+        margin: 0px 4px;
+        cursor: pointer;
+        border: 1px solid red;
+        border-radius: 100%;
+        padding: 5px 10px;
+    }
+}
